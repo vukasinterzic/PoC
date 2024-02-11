@@ -4,6 +4,10 @@
 resource "azurerm_private_dns_zone" "dns1" {
   name                = "${var.private_dns_zone_name_prefix}.postgres.database.azure.com"
   resource_group_name = var.resource_group_name
+
+  tags = {
+    Description = "Private DNS zone for PostgreSQL Flexible Server"
+  }
 }
 
 # Link the private DNS zone to the specified virtual network, allowing resources within the VNet to resolve the PostgreSQL server's private DNS name.

@@ -24,6 +24,10 @@ resource "azurerm_lb" "lb1" {
     name                 = "FrontendIPConfiguration"
     public_ip_address_id = azurerm_public_ip.pip1.id
   }
+
+  tags = {
+    Description = "Load Balancer for ${var.base_name} VMSS"
+  }
 }
 
 # Define a backend address pool for the load balancer. VMSS instances will be associated with this pool.
