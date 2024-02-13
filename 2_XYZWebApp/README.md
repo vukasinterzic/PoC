@@ -52,11 +52,11 @@ This repository contains the Terraform configurations for provisioning a robust 
 │       └── README.md         # Documentation for the DatabaseResources module
 │
 └── examples/              # Directory for examples
-    ├── full_setup/        # Example for full setup
-    │   ├── main.tf        # Example Terraform configuration
-    │   ├── variables.tf   # Example variables
-    │   ├── outputs.tf     # Example outputs
-    │   └── README.md      # Documentation for the example file
+    └── full_setup/        # Example for full setup
+        ├── main.tf        # Example Terraform configuration
+        ├── variables.tf   # Example variables
+        ├── outputs.tf     # Example outputs
+        └── README.md      # Documentation for the example file
 ```
 
 
