@@ -19,7 +19,7 @@ This repository contains the Terraform configurations for provisioning a robust 
 ## Module Overview
 
 ```
-xyzapp-project/
+2_XYZWebApp/
 │
 ├── main.tf                # Main Terraform configuration file for your project
 ├── variables.tf           # Variable definitions for the main module
@@ -27,29 +27,36 @@ xyzapp-project/
 ├── README.md              # Documentation for your project. This file.
 │
 └── modules/               # Directory for Terraform modules
-    ├── vnet/              # VNet module
-    │   ├── main.tf        # VNet specific Terraform configurations
-    │   ├── variables.tf   # VNet module variables
-    │   ├── outputs.tf     # VNet module outputs
-    │   └── README.md      # Documentation for the VNet module
-    │
-    ├── KeyVault/         # KeyVault module
-    │   ├── main.tf       # KeyVault specific Terraform configurations
-    │   ├── variables.tf  # KeyVault module variables
-    │   ├── outputs.tf    # KeyVault module outputs
-    │   └── README.md     # Documentation for the KeyVault module
-    │
-    ├── ApplicationResources/ # ApplicationResources module
-    │   ├── main.tf            # ApplicationResources specific Terraform configurations
-    │   ├── variables.tf       # ApplicationResources module variables
-    │   ├── outputs.tf         # ApplicationResources module outputs
-    │   └── README.md          # Documentation for the ApplicationResources module
-    │
-    └── DatabaseResources/    # DatabaseResources module
-        ├── main.tf           # DatabaseResources specific Terraform configurations
-        ├── variables.tf      # DatabaseResources module variables
-        ├── outputs.tf        # DatabaseResources module outputs
-        └── README.md         # Documentation for the DatabaseResources module
+│   ├── vnet/              # VNet module
+│   │   ├── main.tf        # VNet specific Terraform configurations
+│   │   ├── variables.tf   # VNet module variables
+│   │   ├── outputs.tf     # VNet module outputs
+│   │   └── README.md      # Documentation for the VNet module
+│   │
+│   ├── KeyVault/         # KeyVault module
+│   │   ├── main.tf       # KeyVault specific Terraform configurations
+│   │   ├── variables.tf  # KeyVault module variables
+│   │   ├── outputs.tf    # KeyVault module outputs
+│   │   └── README.md     # Documentation for the KeyVault module
+│   │
+│   ├── ApplicationResources/ # ApplicationResources module
+│   │   ├── main.tf            # ApplicationResources specific Terraform configurations
+│   │   ├── variables.tf       # ApplicationResources module variables
+│   │   ├── outputs.tf         # ApplicationResources module outputs
+│   │   └── README.md          # Documentation for the ApplicationResources module
+│   │
+│   └── DatabaseResources/    # DatabaseResources module
+│       ├── main.tf           # DatabaseResources specific Terraform configurations
+│       ├── variables.tf      # DatabaseResources module variables
+│       ├── outputs.tf        # DatabaseResources module outputs
+│       └── README.md         # Documentation for the DatabaseResources module
+│
+└── examples/              # Directory for examples
+    ├── full_setup/        # Example for full setup
+    │   ├── main.tf        # Example Terraform configuration
+    │   ├── variables.tf   # Example variables
+    │   ├── outputs.tf     # Example outputs
+    │   └── README.md      # Documentation for the example file
 ```
 
 
@@ -118,18 +125,6 @@ terraform {
 #### Step 3: Initialize Terraform
 
 After configuring the backend, run `terraform init` to initialize it. Terraform will detect the change in configuration and prompt you to copy the existing state to the new backend. Confirm the action to migrate your local state file to the Azure blob storage.
-
-### Best Practice for Production
-
-For production environments, it's also recommended to enable additional features like:
-
-- **Versioning**: On your blob storage to keep a history of your state files.
-- **State Locking**: Use Terraform Enterprise or enhance your Azure blob setup to lock state files during deployment to prevent conflicts.
-
-By following these steps, you can securely manage your Terraform state in Azure Storage, making your infrastructure management more scalable, secure, and collaborative.
-
-
-
 
 
 
